@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en/ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <title>Авторизация</title>
+  </head>
+  <body>
+    <section id="overlay">
+      <hr>
+	  <form action="index.php" method="POST">
+	  <section class="submission">
+		<input type="hidden" value="reg" name="avtorization">
+        <input type="submit" value="Регистрация">
+        </section>
+	  </form>
+	  <hr>
+      <form action="index.php" method="POST">
+				<h1>Авторизация</h1>
+        <section class="login">
+          <label for="login">Логин</label>
+    			<input type="text" name="login" id="login" required>
+        </section>
+        <hr>
+        
+		<section class="pass">
+          <label for="pass">Пароль</label>
+          <input type="password" name="pass" id="pass" required>
+        </section>
+        <hr>
+		
+		<input type="hidden" value="avtorization" name="avtorization">
+		
+		<section class="submission">
+          <input type="submit" value="Подтвердить">
+        </section>
+	
+	</form>
+    </section>
+  </body>
+</html>
+

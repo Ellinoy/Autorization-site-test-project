@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en/ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <title>Ошибка</title>
+  </head>
+  <body>
+       <h1>Неверный Логин или Пароль. Попробуйте авторизоваться снова или зарегистрируйтесь</h1>
+    <section id="overlay">
+      <hr>
+	  <form action="index.php" method="POST">
+	  <section class="submission">
+			<input type="hidden" value="reg" name="avtorization">
+			<input type="submit" value="Регистрация">
+        </section>
+	  </form>
+	  <hr>
+	  <form action="index.php" method="POST">
+	  <section class="submission">
+          <input type="submit" value="Авторизация">
+        </section>
+	  </form>
+    </section>
+  </body>
+</html>
+

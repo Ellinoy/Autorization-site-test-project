@@ -1,0 +1,31 @@
+Запросы для базы данных
+
+SQL
+
+Есть 2 таблицы
+
+таблица пользователей:
+users
+----------
+`id` int(11)
+`email` varchar(55)
+`login` varchar(55)
+
+и таблица заказов
+orders
+--------
+`id` int(11)
+`user_id` int(11)
+`price` int(11)
+
+Необходимо :
+1) составить запрос, который выведет список email'лов встречающихся более чем у одного пользователя
+2) вывести список логинов пользователей, которые не сделали ни одного заказа
+3) вывести список логинов пользователей которые сделали более двух заказов
+
+1)
+SELECT email, COUNT(email) FROM users GROUP BY email HAVING COUNT(email)>1 
+2)
+SELECT u.login, o.id FROM users AS u LEFT JOIN orders AS o ON u.id=o.user_id GROUP BY u.login HAVING o.id IS NULL
+3)
+SELECT u.login, COUNT(u.login) FROM users AS u INNER JOIN orders AS o ON u.id=o.user_id GROUP BY u.login HAVING COUNT(u.login)>1
