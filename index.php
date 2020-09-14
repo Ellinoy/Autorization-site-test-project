@@ -1,6 +1,6 @@
 <?php
 	session_start();
-    $action = (string)$_POST["avtorization"];
+    $action = (string)$_POST["autorization"];
 	$bd = new \PDO('mysql:host=verif; dbname=project1;',     'Forphp',    'Php12');
 	$bd->exec('SET NAMES UTF8');
 	if($action === NULL || $action === "") //проверяем есть ли данные авторизации пользователя. Если нет, отправляем на авторизацию, если да отправляем его дальше
@@ -10,7 +10,7 @@
 			header ("Location: /profile.php");
 			exit;
 			}
-		readfile("avtorization.html");
+		readfile("autorization.html");
 		exit;
 	}
 	switch ($action) //проверяем данные поступившие от пользователя
@@ -18,7 +18,7 @@
 		case "reg":
 			readfile("regist.html");
 			break;
-		case "avtorization": //проверяем авторизуется ли пользователь
+		case "autorization": //проверяем авторизуется ли пользователь
 			$login = (string)$_POST["login"];
 			$password = (string)$_POST["pass"];
 			$stm = $bd->query("SELECT * FROM `users` WHERE `login` = '" . $login . "'");
@@ -77,7 +77,7 @@
 			break;
 		case "exit": //звершаем сессию когда пользователь выходит из профиля
 			$_SESSION["user"] = NULL;
-			readfile("avtorization.html");
+			readfile("autorization.html");
 			break;
 	}
 	?>
