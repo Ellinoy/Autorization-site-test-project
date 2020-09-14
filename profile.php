@@ -48,7 +48,7 @@
         <hr>
 		
 		<input type="hidden" value="<?= $_SESSION["user"];?>" name="login">
-		<input type="hidden" value="profile_change" name="avtorization">
+		<input type="hidden" value="profile_change" name="autorization">
 		
 		<section class="submission">
           <input type="submit" value="Подтвердить">
@@ -59,7 +59,7 @@
 	
 	<form action="index.php" method="POST">
 	<input type="hidden" value="<?= $_SESSION["user"];?>" name="login">
-	<input type="hidden" value="exit" name="avtorization">
+	<input type="hidden" value="exit" name="autorization">
 		<section class="submission">
           <input type="submit" value="Выход">
 		</section>
